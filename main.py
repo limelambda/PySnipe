@@ -11,7 +11,6 @@ def main():
                 try:
                     kb.type(f'viewauction {uuids[inc]}\n')
                 except IndexError:
-                    uuids = get_profitable()
                     inc = 0
                 inc += 1
             if key == keyboard.Key.f9:
@@ -58,8 +57,10 @@ def main():
     inc = 0
     kb = keyboard.Controller()
     uuids = get_profitable()
-    with keyboard.Listener(on_release=on_release) as listener:
-        listener.join()
+    listener = keyboard.Listener(on_release=on_release)
+    listener.start()
+    while True:
+        get_profitable()
 
 if __name__ == '__main__':
     main()
