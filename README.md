@@ -1,5 +1,5 @@
-# PyFlipper
-An auction house flipper tool written in python for Hypixel Skyblock
+# PySnipe
+An auction house ~~flipper~~ sniping tool written in python for Hypixel Skyblock
 ## Is it bannable?
 Idk I guess we'll see soon anough
 ## How do I install it?
