@@ -5,8 +5,8 @@ Idk I guess we'll see soon anough
 ## How do I install it?
 Assuming you already have python and git and they're installed to path and that your using powershell
 ```
-git clone https://github.com/redalpa333/pyflipper.git
-cd pyflipper
+git clone https://github.com/redalpa333/PySnipe.git
+cd PySnipe
 python -m venv .venv
 .venv/Script/activate.ps1
 pip install -r install.txt
