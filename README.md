@@ -7,6 +7,12 @@ Assuming you already have python and git and they're installed to path and that 
 ```
 git clone https://github.com/redalpa333/PySnipe.git
 cd PySnipe
+notepad main.py
+```
+In the notepad window window just opened replace the # signs with whatever value you want then save and close config.txt
+
+Now back to the console
+```
 python -m venv .venv
 .venv/Script/activate.ps1
 pip install -r install.txt
@@ -21,5 +27,6 @@ python -m venv .venv
 pip install -r install.txt
 ```
 ## How do I use it?
-F10 to paste the view auction command
-F9 to stop the program
+* Set up your config at C:\\Users\\{your username}\\PySnipe\\config.txt
+* F10 to paste the view auction command
+* F9 to stop the program

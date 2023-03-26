@@ -2,6 +2,15 @@ import requests, nbt, io, base64, itertools, time
 from pynput import keyboard
 
 def main():
+    CONFIG = open('config.txt', 'rt')
+    try:
+        MINIMUM_MARGIN = int(CONFIG.readline().split(' ')[-1][:-1])  # Get thing after the space after = on line 1 but not the new line charecter
+        MAX_PRICE = int(CONFIG.readline().split(' ')[-1][:-1])  # And again for the next line...
+    except ValueError:
+        print('''Seems like you haven't set up the config
+open config.txt and replce the '#'s with numbers''')
+        exit()
+    
     def on_release(key):
             nonlocal inc
             if key == keyboard.Key.f10:
@@ -31,7 +40,7 @@ def main():
         for page in range(number_pages): #temp just so shits faster :)
             print(f'processing page {page}')
             web_data = requests.get(f'https://api.hypixel.net/skyblock/auctions?page={page}')
-            #add a dict with the auction UUID as the key, price & item ID in a tuple to a list if it's BIN
+            # add a dict with the auction UUID as the key, price & item ID in a tuple to a list if it's BIN
             items.append((str(get_attr_from_nbt(i['item_bytes'])['id']), i['uuid'], i['starting_bid']) for i in (j for j in web_data.json()['auctions'] if j['bin'] == True))
         
         print('Now processing combined data')
@@ -48,7 +57,7 @@ def main():
         for dict_item_key in item_prices_dict.keys():
             prices = list(item_prices_dict[dict_item_key].values()) 
             try:
-                if prices[1] / prices[0] - 1 > 0.1 and prices[1] - prices[0] >= 1000000:
+                if prices[1] - prices[0] >= MINIMUM_MARGIN and prices[0] < MAX_PRICE:
                     uuids.append(list(item_prices_dict[dict_item_key].keys())[0])
             except IndexError:
                 pass
@@ -57,6 +66,7 @@ def main():
     inc = 0
     kb = keyboard.Controller()
     uuids = get_profitable()
+    print('You may now start \'sniping\' with F10')
     listener = keyboard.Listener(on_release=on_release)
     listener.start()
     while True:

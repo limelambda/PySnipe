@@ -1,0 +1,2 @@
+Minimum profit margin = #
+Maximum price of item to be bought = #
