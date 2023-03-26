@@ -1,5 +1,5 @@
 # PyFlipper
-Flipper written in python for Hypixel Skyblock
+An auction house flipper tool written in python for Hypixel Skyblock
 ## Is it bannable?
 Idk I guess we'll see soon anough
 ## How do I install it?
@@ -8,7 +8,7 @@ Assuming you already have python and git and they're installed to path and that 
 git clone https://github.com/redalpa333/pyflipper.git
 cd pyflipper
 python -m venv .venv
-.venv/Script/Activate.ps1
+.venv/Script/activate.ps1
 pip install -r install.txt
 python main.py
 ```
