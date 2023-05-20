@@ -5,7 +5,7 @@ Idk I guess we'll see soon anough
 ## How do I install it?
 Assuming you already have python and git and they're installed to path and that your using powershell
 ```
-git clone https://github.com/redalpa333/PySnipe.git
+git clone https://github.com/redalpha333/PySnipe.git
 cd PySnipe
 notepad main.py
 ```
