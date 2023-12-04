@@ -5,7 +5,7 @@ Idk I guess we'll see soon anough
 ## How do I install it?
 Assuming you already have python and git and they're installed to path
 ```
-git clone https://github.com/redalpha333/PySnipe.git
+git clone https://github.com/limelambda/PySnipe.git
 cd PySnipe
 notepad config.txt
 ```
